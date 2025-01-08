@@ -15,9 +15,21 @@
 #define DNA_FURCOLOR_4 DNA_FEATURE_BLOCKS + 10
 #define DNA_FURCOLOR_5 DNA_FEATURE_BLOCKS + 11
 
-#define DNA_MODULAR_BLOCKS_COUNT 11
+//resomi
+#define SPECIES_RESOMI "resomi"
+#define BUTT_SPRITE_RESOMI "resomi"
+
+#define DNA_RESOMI_BODY_MARKINGS DNA_FEATURE_BLOCKS + 21
+#define DNA_FEATHERCOLOR_RESOMI_1 DNA_FEATURE_BLOCKS + 22
+#define DNA_FEATHERCOLOR_RESOMI_2 DNA_FEATURE_BLOCKS + 23
+#define DNA_FEATHERCOLOR_RESOMI_3 DNA_FEATURE_BLOCKS + 24
+#define DNA_FEATHERCOLOR_RESOMI_4 DNA_FEATURE_BLOCKS + 25
+#define DNA_FEATHERCOLOR_RESOMI_5 DNA_FEATURE_BLOCKS + 26
+
+#define DNA_MODULAR_BLOCKS_COUNT 17
 
 #define HEAD_VULPKANIN (1<<16)
+#define HEAD_RESOMI (1<<18)
 
 GLOBAL_LIST_INIT(first_names_female_vulp, world.file2list("strings/names/first_female_vulp.txt"))
 GLOBAL_LIST_INIT(first_names_male_vulp, world.file2list("strings/names/first_male_vulp.txt"))
@@ -30,6 +42,8 @@ GLOBAL_LIST_INIT(last_names_vulp, world.file2list("strings/names/last_vulp.txt")
 	var/list/tails_list_vulpkanin
 	var/list/vulpkanin_tail_markings_list
 	var/list/vulpkanin_facial_hair_list
+	//resomi
+	var/list/resomi_body_markings_list
 
 /datum/controller/subsystem/accessories/proc/init_modular_lists()
 	vulpkanin_body_markings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/vulpkanin_body_markings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
@@ -38,6 +52,8 @@ GLOBAL_LIST_INIT(last_names_vulp, world.file2list("strings/names/last_vulp.txt")
 	tails_list_vulpkanin = init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/vulpkanin, add_blank = FALSE)[DEFAULT_SPRITE_LIST]
 	vulpkanin_tail_markings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/vulpkanin_tail_markings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
 	vulpkanin_facial_hair_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/vulpkanin_facial_hair, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
+	//resomi
+	resomi_body_markings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/resomi_body_markings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
 
 /datum/controller/subsystem/accessories/PreInit()
 	..()

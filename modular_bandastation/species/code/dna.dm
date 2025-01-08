@@ -13,6 +13,10 @@
 		L[DNA_VULPKANIN_TAIL_MARKINGS - DNA_FEATURE_BLOCKS] = construct_block(SSaccessories.vulpkanin_tail_markings_list.Find(features["tail_markings"]), SSaccessories.vulpkanin_tail_markings_list.len)
 	if(features["vulpkanin_facial_hair"])
 		L[DNA_VULPKANIN_FACIAL_HAIR - DNA_FEATURE_BLOCKS] = construct_block(SSaccessories.vulpkanin_facial_hair_list.Find(features["vulpkanin_facial_hair"]), SSaccessories.vulpkanin_facial_hair_list.len)
+	//resomi
+	if(features["resomi_body_markings"])
+		L[DNA_RESOMI_BODY_MARKINGS - DNA_FEATURE_BLOCKS] = construct_block(SSaccessories.resomi_body_markings_list.Find(features["resomi_body_markings"]), SSaccessories.resomi_body_markings_list.len)
+	// vulpkanin
 	if(features["furcolor_first"])
 		L[DNA_FURCOLOR_1 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["furcolor_first"], include_crunch = FALSE)
 	if(features["furcolor_second"])
@@ -23,6 +27,18 @@
 		L[DNA_FURCOLOR_4 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["furcolor_fourth"], include_crunch = FALSE)
 	if(features["furcolor_fifth"])
 		L[DNA_FURCOLOR_5 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["furcolor_fifth"], include_crunch = FALSE)
+
+	//resomi
+	if(features["resomi_furcolor_first"])
+		L[DNA_FEATHERCOLOR_RESOMI_1 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["resomi_furcolor_first"], include_crunch = FALSE)
+	if(features["resomi_furcolor_second"])
+		L[DNA_FEATHERCOLOR_RESOMI_2 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["resomi_furcolor_second"], include_crunch = FALSE)
+	if(features["resomi_furcolor_third"])
+		L[DNA_FEATHERCOLOR_RESOMI_3 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["resomi_furcolor_third"], include_crunch = FALSE)
+	if(features["resomi_furcolor_fourth"])
+		L[DNA_FEATHERCOLOR_RESOMI_4 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["resomi_furcolor_fourth"], include_crunch = FALSE)
+	if(features["resomi_furcolor_fifth"])
+		L[DNA_FEATHERCOLOR_RESOMI_5 - DNA_FEATURE_BLOCKS] = sanitize_hexcolor(features["resomi_furcolor_fifth"], include_crunch = FALSE)
 
 	for(var/blocknum in 1 to DNA_MODULAR_BLOCKS_COUNT)
 		. += L[blocknum] || random_string(GET_UI_BLOCK_LEN(blocknum), GLOB.hex_characters)
@@ -42,6 +58,10 @@
 			set_uni_feature_block(blocknumber, construct_block(SSaccessories.vulpkanin_tail_markings_list.Find(features["tail_markings"]), SSaccessories.vulpkanin_tail_markings_list.len))
 		if(DNA_VULPKANIN_FACIAL_HAIR)
 			set_uni_feature_block(blocknumber, construct_block(SSaccessories.vulpkanin_facial_hair_list.Find(features["vulpkanin_facial_hair"]), SSaccessories.vulpkanin_facial_hair_list.len))
+		//resomi
+		if(DNA_RESOMI_BODY_MARKINGS)
+			set_uni_feature_block(blocknumber, construct_block(SSaccessories.resomi_body_markings_list.Find(features["resomi_body_markings"]), SSaccessories.resomi_body_markings_list.len))
+		//vulpkanin
 		if(DNA_FURCOLOR_1)
 			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["furcolor_first"], include_crunch = FALSE))
 		if(DNA_FURCOLOR_2)
@@ -52,6 +72,18 @@
 			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["furcolor_fourth"], include_crunch = FALSE))
 		if(DNA_FURCOLOR_5)
 			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["furcolor_fifth"], include_crunch = FALSE))
+		//resomi
+		if(DNA_FEATHERCOLOR_RESOMI_1)
+			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["resomi_furcolor_first"], include_crunch = FALSE))
+		if(DNA_FEATHERCOLOR_RESOMI_2)
+			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["resomi_furcolor_second"], include_crunch = FALSE))
+		if(DNA_FEATHERCOLOR_RESOMI_3)
+			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["resomi_furcolor_third"], include_crunch = FALSE))
+		if(DNA_FEATHERCOLOR_RESOMI_4)
+			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["resomi_furcolor_fourth"], include_crunch = FALSE))
+		if(DNA_FEATHERCOLOR_RESOMI_5)
+			set_uni_feature_block(blocknumber, sanitize_hexcolor(features["resomi_furcolor_fifth"], include_crunch = FALSE))
+
 
 /mob/living/carbon/human/updateappearance(icon_update = TRUE, mutcolor_update = FALSE, mutations_overlay_update = FALSE)
 	. = ..()
@@ -74,6 +106,11 @@
 		if (tail && tail.type == /obj/item/organ/tail/vulpkanin)
 			tail.Remove(src)
 			tail.Insert(src, special=TRUE, movement_flags = DELETE_IF_REPLACED)
+
+	//resomi
+	if(dna.features["resomi_body_markings"])
+		dna.features["resomi_body_markings"] = SSaccessories.resomi_body_markings_list[deconstruct_block(get_uni_feature_block(features, DNA_RESOMI_BODY_MARKINGS), SSaccessories.resomi_body_markings_list.len)]
+	//vulpkanin
 	if(dna.features["vulpkanin_facial_hair"])
 		dna.features["vulpkanin_facial_hair"] = SSaccessories.vulpkanin_facial_hair_list[deconstruct_block(get_uni_feature_block(features, DNA_VULPKANIN_FACIAL_HAIR), SSaccessories.vulpkanin_facial_hair_list.len)]
 	if(dna.features["furcolor_first"])
@@ -86,6 +123,18 @@
 		dna.features["furcolor_fourth"] = sanitize_hexcolor(get_uni_feature_block(features, DNA_FURCOLOR_4))
 	if(dna.features["furcolor_fifth"])
 		dna.features["furcolor_fifth"] = sanitize_hexcolor(get_uni_feature_block(features, DNA_FURCOLOR_5))
+	//resomi
+	if(dna.features["resomi_furcolor_first"])
+		dna.features["resomi_furcolor_first"] = sanitize_hexcolor(get_uni_feature_block(features, DNA_FEATHERCOLOR_RESOMI_1))
+	if(dna.features["resomi_furcolor_second"])
+		dna.features["resomi_furcolor_second"] = sanitize_hexcolor(get_uni_feature_block(features, DNA_FEATHERCOLOR_RESOMI_2))
+	if(dna.features["resomi_furcolor_third"])
+		dna.features["resomi_furcolor_third"] = sanitize_hexcolor(get_uni_feature_block(features, DNA_FEATHERCOLOR_RESOMI_3))
+	if(dna.features["resomi_furcolor_fourth"])
+		dna.features["resomi_furcolor_fourth"] = sanitize_hexcolor(get_uni_feature_block(features, DNA_FEATHERCOLOR_RESOMI_4))
+	if(dna.features["resomi_furcolor_fifth"])
+		dna.features["resomi_furcolor_fifth"] = sanitize_hexcolor(get_uni_feature_block(features, DNA_FEATHERCOLOR_RESOMI_5))
+
 
 /proc/populate_total_uf_len_by_block_modular(last)
 	. = list()
@@ -93,8 +142,16 @@
 	for(var/blocknumber in 1 to DNA_MODULAR_BLOCKS_COUNT + 1)
 		total_block_len += GET_UF_BLOCK_LEN(blocknumber + DNA_FEATURE_BLOCKS - 1)
 		. += total_block_len
-
+//vulpkanin
 /mob/living/carbon/human/species/vulpkanin/random_mutate_unique_features()
+	if(!has_dna())
+		CRASH("[src] does not have DNA")
+	var/num = rand(1, DNA_FEATURE_BLOCKS + DNA_MODULAR_BLOCKS_COUNT)
+	dna.set_uni_feature_block(num, random_string(GET_UF_BLOCK_LEN(num), GLOB.hex_characters))
+	updateappearance(mutcolor_update = TRUE, mutations_overlay_update = TRUE)
+
+//resomi
+/mob/living/carbon/human/species/resomi/random_mutate_unique_features()
 	if(!has_dna())
 		CRASH("[src] does not have DNA")
 	var/num = rand(1, DNA_FEATURE_BLOCKS + DNA_MODULAR_BLOCKS_COUNT)
@@ -108,5 +165,11 @@
 		"[DNA_FURCOLOR_3]" = DNA_BLOCK_SIZE_COLOR,
 		"[DNA_FURCOLOR_4]" = DNA_BLOCK_SIZE_COLOR,
 		"[DNA_FURCOLOR_5]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_FEATHERCOLOR_RESOMI_1]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_FEATHERCOLOR_RESOMI_2]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_FEATHERCOLOR_RESOMI_3]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_FEATHERCOLOR_RESOMI_4]" = DNA_BLOCK_SIZE_COLOR,
+		"[DNA_FEATHERCOLOR_RESOMI_5]" = DNA_BLOCK_SIZE_COLOR
 	)
+
 	GLOB.total_uf_len_by_block += populate_total_uf_len_by_block_modular(GLOB.total_uf_len_by_block[DNA_FEATURE_BLOCKS])

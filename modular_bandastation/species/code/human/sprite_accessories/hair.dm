@@ -204,3 +204,82 @@
 	name = "Side Swept"
 	icon = 'modular_bandastation/species/icons/mob/species/lizardperson/sprite_accessories/horns.dmi'
 	icon_state = "sideswept"
+
+
+// MARK: Resomi hair
+
+
+/datum/sprite_accessory/hair/resomi
+	icon = 'modular_bandastation/species/icons/mob/species/resomi/sprite_accessories/hair.dmi'
+
+/datum/sprite_accessory/hair/resomi/resomi_ears_s
+	name = "Resomi ears s"
+	icon_state = "resomi_ears_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_spiky_s
+	name = "Resomi spiky s"
+	icon_state = "resomi_spiky_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_hedge_s
+	name = "Resomi hedge s"
+	icon_state = "resomi_hedge_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_default_s
+	name = "Resomi default s"
+	icon_state = "resomi_default_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_long_s
+	name = "Resomi long s"
+	icon_state = "resomi_long_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_burst_short_s
+	name = "Resomi burst short s"
+	icon_state = "resomi_burst_short_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_mohawk_s
+	name = "Resomi mohawk s"
+	icon_state = "resomi_mohawk_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_pointy_s
+	name = "Resomi pointy s"
+	icon_state = "resomi_pointy_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_upright_s
+	name = "Resomi upright s"
+	icon_state = "resomi_upright_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_mane_s
+	name = "Resomi mane s"
+	icon_state = "resomi_mane_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_droopy_s
+	name = "Resomi droopy s"
+	icon_state = "resomi_droopy_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_mushroom_s
+	name = "Resomi mushroom s"
+	icon_state = "resomi_mushroom_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_twies_s
+	name = "Resomi twies s"
+	icon_state = "resomi_twies_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_backstrafe_s
+	name = "Resomi backstrafe s"
+	icon_state = "resomi_backstrafe_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_longway_s
+	name = "Resomi longway s"
+	icon_state = "resomi_longway_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_notree_s
+	name = "Resomi notree s"
+	icon_state = "resomi_notree_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_fluffymohawk_s
+	name = "Resomi fluffymohawk s"
+	icon_state = "resomi_fluffymohawk_s"
+
+/datum/sprite_accessory/hair/resomi/resomi_mane_beardless_s
+	name = "Resomi mane beardless s"
+	icon_state = "resomi_mane_beardless_s"

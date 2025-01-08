@@ -394,6 +394,7 @@ There are several things that need to be remembered:
 		// BANDASTATION EDIT START - SPECIES CLOTHING ICONS
 		var/list/icon_files_species = list(
 			"vulpkanin" = 'modular_bandastation/species/icons/mob/species/vulpkanin/clothing/head.dmi',
+			//"resomi" = 'modular_bandastation/species/icons/mob/species/resomi/clothing/head.dmi',
 		)
 
 		var/mutant_override = FALSE
