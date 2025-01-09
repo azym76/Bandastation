@@ -19,17 +19,19 @@
 #define SPECIES_RESOMI "resomi"
 #define BUTT_SPRITE_RESOMI "resomi"
 
-#define DNA_RESOMI_BODY_MARKINGS DNA_FEATURE_BLOCKS + 21
-#define DNA_FEATHERCOLOR_RESOMI_1 DNA_FEATURE_BLOCKS + 22
-#define DNA_FEATHERCOLOR_RESOMI_2 DNA_FEATURE_BLOCKS + 23
-#define DNA_FEATHERCOLOR_RESOMI_3 DNA_FEATURE_BLOCKS + 24
-#define DNA_FEATHERCOLOR_RESOMI_4 DNA_FEATURE_BLOCKS + 25
-#define DNA_FEATHERCOLOR_RESOMI_5 DNA_FEATURE_BLOCKS + 26
-
-#define DNA_MODULAR_BLOCKS_COUNT 17
+#define DNA_RESOMI_BODY_MARKINGS DNA_FEATURE_BLOCKS + 12
+#define DNA_RESOMI_HEAD_MARKINGS DNA_FEATURE_BLOCKS + 13
+#define DNA_RESOMI_HEAD_ACCESSORIES DNA_FEATURE_BLOCKS + 14
+#define DNA_RESOMI_FACIAL_HAIR DNA_FEATURE_BLOCKS + 15
+#define DNA_FEATHERCOLOR_RESOMI_1 DNA_FEATURE_BLOCKS + 16
+#define DNA_FEATHERCOLOR_RESOMI_2 DNA_FEATURE_BLOCKS + 17
+#define DNA_FEATHERCOLOR_RESOMI_3 DNA_FEATURE_BLOCKS + 18
+#define DNA_FEATHERCOLOR_RESOMI_4 DNA_FEATURE_BLOCKS + 19
+#define DNA_FEATHERCOLOR_RESOMI_5 DNA_FEATURE_BLOCKS + 20
+#define DNA_MODULAR_BLOCKS_COUNT 20
 
 #define HEAD_VULPKANIN (1<<16)
-#define HEAD_RESOMI (1<<18)
+#define HEAD_RESOMI (1<<17)
 
 GLOBAL_LIST_INIT(first_names_female_vulp, world.file2list("strings/names/first_female_vulp.txt"))
 GLOBAL_LIST_INIT(first_names_male_vulp, world.file2list("strings/names/first_male_vulp.txt"))
@@ -44,7 +46,9 @@ GLOBAL_LIST_INIT(last_names_vulp, world.file2list("strings/names/last_vulp.txt")
 	var/list/vulpkanin_facial_hair_list
 	//resomi
 	var/list/resomi_body_markings_list
-
+	var/list/resomi_head_markings_list
+	var/list/resomi_head_accessories_list
+	var/list/resomi_facial_hair_list
 /datum/controller/subsystem/accessories/proc/init_modular_lists()
 	vulpkanin_body_markings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/vulpkanin_body_markings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
 	vulpkanin_head_markings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/vulpkanin_head_markings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
@@ -54,6 +58,7 @@ GLOBAL_LIST_INIT(last_names_vulp, world.file2list("strings/names/last_vulp.txt")
 	vulpkanin_facial_hair_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/vulpkanin_facial_hair, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
 	//resomi
 	resomi_body_markings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/resomi_body_markings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
+
 
 /datum/controller/subsystem/accessories/PreInit()
 	..()

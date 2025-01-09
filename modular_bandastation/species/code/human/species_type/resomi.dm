@@ -31,18 +31,18 @@
 	)
 
 	payday_modifier = 0.8
-	bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT + 30
-	bodytemp_cold_damage_limit = BODYTEMP_COLD_DAMAGE_LIMIT - 60
+	bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT - 20
+	bodytemp_cold_damage_limit = BODYTEMP_COLD_DAMAGE_LIMIT + 40
 
 /datum/species/resomi/prepare_human_for_preview(mob/living/carbon/human/resomi)
 	resomi.set_haircolor("#A26324", update = FALSE) // brown
-	resomi.set_hairstyle("resomi_pointy_s", update = TRUE)
+	resomi.set_hairstyle("Resomi pointy s", update = TRUE)
 	resomi.dna.features["mcolor"] = "#D69E67"
-	resomi.dna.features["feathercolor_first"] = "#bd762f"
-	resomi.dna.features["feathercolor_second"] = "#2b2015"
-	resomi.dna.features["feathercolor_third"] = "#2b2015"
-	resomi.dna.features["feathercolor_fourth"] = "#ffa2be"
-	resomi.dna.features["feathercolor_fifth"] = "#bd762f"
+	resomi.dna.features["resomi_furcolor_first"] = "#bd762f"
+	resomi.dna.features["resomi_furcolor_second"] = "#2b2015"
+	resomi.dna.features["resomi_furcolor_third"] = "#2b2015"
+	resomi.dna.features["resomi_furcolor_fourth"] = "#ffa2be"
+	resomi.dna.features["resomi_furcolor_fifth"] = "#bd762f"
 	resomi.update_body(is_creating = TRUE)
 
 /datum/species/resomi/randomize_features()
@@ -50,11 +50,11 @@
 	features["resomi_body_markings"] = prob(50) ? pick(SSaccessories.resomi_body_markings_list) : "None"
 
 	var/feathercolor = "#[random_color()]"
-	features["feathercolor_first"] = feathercolor
-	features["feathercolor_second"] = feathercolor
-	features["feathercolor_third"] = feathercolor
-	features["feathercolor_fourth"] = feathercolor
-	features["feathercolor_fifth"] = feathercolor
+	features["resomi_furcolor_first"] = feathercolor
+	features["resomi_furcolor_second"] = feathercolor
+	features["resomi_furcolor_third"] = feathercolor
+	features["resomi_furcolor_fourth"] = feathercolor
+	features["resomi_furcolor_fifth"] = feathercolor
 	return features
 
 /datum/species/resomi/get_physical_attributes()
@@ -206,10 +206,10 @@
 			overlay.icon = accessory.icon
 			overlay.icon_state = accessory.icon_state
 			overlay.use_gender = accessory.gender_specific
-			overlay.draw_color = accessory.color_src ? resomi.dna.features["furcolor_first"] : null
+			overlay.draw_color = accessory.color_src ? resomi.dna.features["resomi_furcolor__first"] : null
 
 			if(istype(accessory, /datum/sprite_accessory/resomi_body_markings) && accessory.colored_paws && (istype(people_part, /obj/item/bodypart/arm/left/resomi) || istype(people_part, /obj/item/bodypart/arm/right/resomi)))
-				overlay.aux_color_paw = accessory.color_src ? resomi.dna.features["furcolor_first"] : null
+				overlay.aux_color_paw = accessory.color_src ? resomi.dna.features["resomi_furcolor__first"] : null
 
 			people_part.add_bodypart_overlay(overlay)
 

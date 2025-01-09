@@ -2,7 +2,7 @@
 
 /datum/bodypart_overlay/simple/body_marking/resomi
 	dna_feature_key = "resomi_body_markings"
-	applies_to = list(/obj/item/bodypart/chest/resomi, /obj/item/bodypart/arm/left/resomi, /obj/item/bodypart/arm/right/resomi, /obj/item/bodypart/leg/left/resomi, /obj/item/bodypart/leg/right/resomi)
+	applies_to = list(/obj/item/bodypart/chest/resomi, /obj/item/bodypart/arm/left/resomi, /obj/item/bodypart/arm/right/resomi, /obj/item/bodypart/leg/left/resomi, /obj/item/bodypart/leg/right/resomi, )
 	var/aux_color_paw = null
 
 /datum/bodypart_overlay/simple/body_marking/resomi/get_accessory(name)

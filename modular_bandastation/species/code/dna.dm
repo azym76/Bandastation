@@ -110,6 +110,7 @@
 	//resomi
 	if(dna.features["resomi_body_markings"])
 		dna.features["resomi_body_markings"] = SSaccessories.resomi_body_markings_list[deconstruct_block(get_uni_feature_block(features, DNA_RESOMI_BODY_MARKINGS), SSaccessories.resomi_body_markings_list.len)]
+
 	//vulpkanin
 	if(dna.features["vulpkanin_facial_hair"])
 		dna.features["vulpkanin_facial_hair"] = SSaccessories.vulpkanin_facial_hair_list[deconstruct_block(get_uni_feature_block(features, DNA_VULPKANIN_FACIAL_HAIR), SSaccessories.vulpkanin_facial_hair_list.len)]

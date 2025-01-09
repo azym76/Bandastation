@@ -2,7 +2,7 @@
 	icon_greyscale = 'modular_bandastation/species/icons/mob/species/resomi/sprite_accessories/body.dmi'
 	limb_id = SPECIES_RESOMI
 	is_dimorphic = TRUE
-	head_flags = HEAD_LIPS|HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES|HEAD_DEBRAIN|HEAD_HAIR|HEAD_VULPKANIN
+	head_flags = HEAD_LIPS|HEAD_EYESPRITES|HEAD_EYECOLOR|HEAD_EYEHOLES|HEAD_DEBRAIN|HEAD_HAIR|HEAD_RESOMI
 	species_bodytype = SPECIES_RESOMI
 
 /obj/item/bodypart/chest/resomi
