@@ -135,11 +135,11 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	target.dna.features["furcolor_fifth"] = COLOR_WHITE
 	//Resomi
 	target.dna.features["resomi_body_markings"] = get_consistent_feature_entry(SSaccessories.resomi_body_markings_list)
-	target.dna.features["furcolor_first"] = COLOR_WHITE
-	target.dna.features["furcolor_second"] = COLOR_WHITE
-	target.dna.features["furcolor_third"] = COLOR_WHITE
-	target.dna.features["furcolor_fourth"] = COLOR_WHITE
-	target.dna.features["furcolor_fifth"] = COLOR_WHITE
+	target.dna.features["resomi_furcolor_first"] = COLOR_WHITE
+	target.dna.features["resomi_furcolor_second"] = COLOR_WHITE
+	target.dna.features["resomi_furcolor_third"] = COLOR_WHITE
+	target.dna.features["resomi_furcolor_fourth"] = COLOR_WHITE
+	target.dna.features["resomi_furcolor_fifth"] = COLOR_WHITE
 	// BANDA STATION EDIT STOP
 	target.dna.initialize_dna(create_mutation_blocks = FALSE, randomize_features = FALSE)
 	// UF and UI are nondeterministic, even though the features are the same some blocks will randomize slightly
