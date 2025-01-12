@@ -3,13 +3,21 @@
 	desc = "Длинный и более чувствительный язык, может различить больше вкусов."
 	icon_state = "tongue"
 	taste_sensitivity = 10
-	modifies_speech = FALSE
-	languages_native = list(/datum/language/canilunzt)
+	say_mod = "щебечет"
+	verb_ask = "чирикает"
+	verb_exclaim = "верещит"
+	verb_whisper = "тихо щебечет"
+	modifies_speech = TRUE
+	languages_native = list(/datum/language/resomi)
 	liked_foodtypes = RAW | MEAT | SEAFOOD
 	disliked_foodtypes =  FRUIT | NUTS | GROSS | GRAIN
-
+	var/static/list/speech_replacements = list(
+		new /regex("з+", "g") = "с",
+		new /regex("ч+", "g") = "щ",
+		new /regex("ж+", "g") = "ш",
+	)
 /obj/item/organ/tongue/resomi/get_possible_languages()
-	return ..() + /datum/language/canilunzt
+	return ..() + /datum/language/resomi
 
 
 /obj/item/organ/stomach/resomi
@@ -25,7 +33,7 @@
 	icon = 'modular_bandastation/species/icons/mob/species/resomi/organs.dmi'
 
 /obj/item/organ/ears/resomi
-	desc = "Большие ушки позволяют легче слышать шепот."
+	desc = "ДОБАВИТЬ ОПИСАНИЕ И СПРАЙТЫ."
 	damage_multiplier = 2
 
 /obj/item/organ/ears/resomi/on_mob_insert(mob/living/carbon/ear_owner)

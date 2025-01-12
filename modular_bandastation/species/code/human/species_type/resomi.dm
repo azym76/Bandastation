@@ -7,7 +7,7 @@
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 
-	species_language_holder = /datum/language_holder/vulpkanin
+	species_language_holder = /datum/language_holder/resomi
 	// digitigrade_customization = DIGITIGRADE_OPTIONAL
 
 	mutantbrain = /obj/item/organ/brain/resomi
@@ -30,7 +30,7 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/resomi,
 	)
 
-	payday_modifier = 0.8
+	payday_modifier = 1
 	bodytemp_heat_damage_limit = BODYTEMP_HEAT_DAMAGE_LIMIT - 20
 	bodytemp_cold_damage_limit = BODYTEMP_COLD_DAMAGE_LIMIT + 40
 
@@ -76,12 +76,6 @@
 
 	to_add += list(
 		list(
-			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
-			SPECIES_PERK_ICON = "wind",
-			SPECIES_PERK_NAME = "Чувствительный нюх",
-			SPECIES_PERK_DESC = "[plural_form] могут различать больше запахов и запоминать их.",
-		),
-		list(
 			SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 			SPECIES_PERK_ICON = "assistive-listening-systems",
 			SPECIES_PERK_NAME = "Чувствительный слух",
@@ -109,7 +103,7 @@
 			SPECIES_PERK_TYPE = SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = "wine-glass",
 			SPECIES_PERK_NAME = "Чувствительность к алкоголю",
-			SPECIES_PERK_DESC = "Вульпканская печень более восприимчива к алкоголю, чем печень человека, примерно на 150%."
+			SPECIES_PERK_DESC = "Печень резоми более восприимчива к алкоголю, чем печень человека, примерно на 200%."
 		))
 
 /datum/species/resomi/create_pref_language_perk()
@@ -117,7 +111,7 @@
 			SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 			SPECIES_PERK_ICON = "comment",
 			SPECIES_PERK_NAME = "Носитель языка",
-			SPECIES_PERK_DESC = "[plural_form] получают возможность говорить на Канилунце.",
+			SPECIES_PERK_DESC = "[plural_form] получают возможность говорить на Шэки.",
 		))
 
 /datum/species/resomi/get_scream_sound(mob/living/carbon/human/human)

@@ -159,7 +159,7 @@
 	dna.set_uni_feature_block(num, random_string(GET_UF_BLOCK_LEN(num), GLOB.hex_characters))
 	updateappearance(mutcolor_update = TRUE, mutations_overlay_update = TRUE)
 
-/datum/modpack/species/vulpkanin/post_initialize()
+/datum/modpack/species/post_initialize()
 	GLOB.features_block_lengths += list(
 		"[DNA_FURCOLOR_1]" = DNA_BLOCK_SIZE_COLOR,
 		"[DNA_FURCOLOR_2]" = DNA_BLOCK_SIZE_COLOR,

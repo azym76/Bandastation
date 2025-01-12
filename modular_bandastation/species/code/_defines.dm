@@ -47,7 +47,7 @@ GLOBAL_LIST_INIT(last_names_vulp, world.file2list("strings/names/last_vulp.txt")
 	//resomi
 	var/list/resomi_body_markings_list
 	var/list/resomi_head_markings_list
-	var/list/resomi_head_accessories_list
+	var/list/resomi_markings_list
 	var/list/resomi_facial_hair_list
 /datum/controller/subsystem/accessories/proc/init_modular_lists()
 	vulpkanin_body_markings_list = init_sprite_accessory_subtypes(/datum/sprite_accessory/vulpkanin_body_markings, add_blank = TRUE)[DEFAULT_SPRITE_LIST]
