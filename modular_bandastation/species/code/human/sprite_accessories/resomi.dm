@@ -14,6 +14,13 @@
 		a.color = aux_color_paw
 	return
 
+/datum/bodypart_overlay/simple/resomi_eyes/modify_bodypart_appearance(datum/appearance)
+	var/image/a = appearance
+	if(a.appearance_flags == 0 && aux_color_paw && (a.icon_state == "resomieyes_l" || a.icon_state == "resomieyes_r"))
+		a.color = aux_color_paw
+	return
+
+
 /datum/sprite_accessory/resomi_body_markings
 	icon = 'modular_bandastation/species/icons/mob/species/resomi/sprite_accessories/body_markings.dmi'
 	name = "None"

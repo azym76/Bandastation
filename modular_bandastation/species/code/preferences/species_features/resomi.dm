@@ -15,6 +15,14 @@
 	var/datum/sprite_accessory/resomi_body_markings/markings = /datum/sprite_accessory/resomi_body_markings
 	return initial(markings.name)
 
+/datum/preference/choiced/resomieyes/icon_for(value)
+	var/static/icon/resomi_head
+
+	if (isnull(resomi_head))
+		resomi_head = icon('modular_bandastation/species/icons/mob/species/resomi/sprite_accessories/body.dmi', "resomi_head_m")
+		resomi_head.Blend(icon('modular_bandastation/species/icons/mob/species/resomi/human_face.dmi', "resomieyes_l"), ICON_OVERLAY)
+		resomi_head.Blend(icon('modular_bandastation/species/icons/mob/species/resomi/human_face.dmi', "resomieyes_r"), ICON_OVERLAY)
+
 /datum/preference/choiced/resomi_body_markings/icon_for(value)
 	var/static/icon/body
 	if (isnull(body))
@@ -29,8 +37,6 @@
 		body.Blend(COLOR_ORANGE, ICON_MULTIPLY)
 
 
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/resomi/human_face.dmi', "resomieyes_l"), ICON_OVERLAY)
-		body.Blend(icon('modular_bandastation/species/icons/mob/species/resomi/human_face.dmi', "resomieyes_r"), ICON_OVERLAY)
 	var/datum/sprite_accessory/markings = SSaccessories.resomi_body_markings_list[value]
 	var/icon/icon_with_markings = new(body)
 
